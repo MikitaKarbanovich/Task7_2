@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Task7_2;
+using System.Collections.Generic;
 
 namespace UnitTest
 {
@@ -21,11 +22,25 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TesetCustomersWithSumOfOrdersMoreThan()
+        public void PositiveTest()
         {
-            stringToInt.Input = "100500";
-            Assert.AreEqual(100500, stringToInt.Input);
+            Assert.AreEqual(100, stringToInt.ConvertStringToInt("100"));
         }
-       
+        [TestMethod]
+        public void DoubleTest()
+        {
+            int a = stringToInt.ConvertStringToInt("100,0");
+            Assert.AreEqual(100, a);
+        }
+        [TestMethod]
+        public void NegativeNumberTest()
+        {
+            Assert.AreEqual(-100, stringToInt.ConvertStringToInt("-100"));
+        }
+        [TestMethod]
+        public void NumbereWithPlusTest()
+        {
+            Assert.AreEqual(100, stringToInt.ConvertStringToInt("+100"));
+        }
     }
 }

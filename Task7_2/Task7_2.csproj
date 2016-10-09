@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\NotAnIntegerException.cs" />
+    <Compile Include="Exceptions\NotANumberException.cs" />
     <Compile Include="StringToInt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
